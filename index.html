@@ -66,6 +66,7 @@
   .car { offset-path: path("M60 520 C 160 470, 170 360, 260 320 S 430 300, 470 210 S 520 70, 600 40"); offset-rotate: auto; animation: travel 7s ease-in-out infinite; }
   @keyframes travel { 0% { offset-distance: 0%; } 100% { offset-distance: 100%; } }
 
+  footer a { color: var(--ink); text-decoration: underline; text-underline-offset: 3px; }
   footer { padding: 18px 24px max(20px, env(safe-area-inset-bottom)); color: var(--muted); font-size: 13px; display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; position: relative; z-index: 1; }
 
   @media (max-width: 820px) {
@@ -142,6 +143,7 @@
 <footer>
   <span>© <span id="y">2026</span> SweetTarmac</span>
   <span>Android app · in development</span>
+  <span><a href="mailto:support@sweettarmac.com">support@sweettarmac.com</a> · <a href="privacy.html">Privacy policy</a> · <a href="terms.html">Terms of use</a></span>
 </footer>
 <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
 </body>
