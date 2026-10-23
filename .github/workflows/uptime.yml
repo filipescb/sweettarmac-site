@@ -1,0 +1,26 @@
+# Free uptime check for the Sweet Tarmac server and site: runs every 30 minutes; a failed run makes GitHub e-mail the repository owner.
+# (GitHub switches scheduled workflows off after 60 days without repository activity: it e-mails about that too. Re-enable it in the Actions tab.)
+name: uptime
+on:
+  schedule:
+    - cron: "7,37 * * * *"
+  workflow_dispatch:
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Server answers and reports ok
+        run: |
+          for i in 1 2 3; do
+            out=$(curl -fsS -m 20 https://104.198.145.244.sslip.io/v1/status) && echo "$out" | grep -q '"ok":true' && echo "server ok: $out" && exit 0
+            echo "attempt $i failed"; sleep 20
+          done
+          echo "SERVER DOWN or not ok"; exit 1
+      - name: Website answers
+        run: |
+          for i in 1 2 3; do
+            code=$(curl -s -o /dev/null -m 20 -w '%{http_code}' -L https://sweettarmac.com) && [ "$code" = "200" ] && echo "site ok" && exit 0
+            echo "attempt $i: HTTP $code"; sleep 20
+          done
+          echo "SITE DOWN"; exit 1
