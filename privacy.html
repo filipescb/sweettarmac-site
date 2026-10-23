@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Sweet Tarmac – Privacy policy</title>
+<style>body{font:16px/1.6 system-ui,Segoe UI,Arial,sans-serif;max-width:760px;margin:32px auto;padding:0 18px;color:#14302c;background:#fff}h1,h2{color:#0f3d3a}h2{margin-top:32px;border-top:1px solid #d3e5e0;padding-top:18px}code{background:#e8f2f0;padding:1px 5px;border-radius:4px}table{border-collapse:collapse;width:100%;margin:10px 0;font-size:15px}th,td{border:1px solid #c5dcd6;padding:7px 9px;text-align:left;vertical-align:top}th{background:#e4f3ef}.note{background:#fff7e0;border:1px solid #e8c766;padding:10px 14px;border-radius:8px}</style></head><body>
+<h1>Sweet Tarmac – Privacy policy</h1>
+<p>Last updated: 23 October 2026. Sweet Tarmac ("the app") is published by Filipe B, an individual in Portugal ("we"). Contact for anything about your data: <a href="mailto:support@sweettarmac.com">support@sweettarmac.com</a>.</p>
+
+<h2>In short</h2>
+<ul>
+<li>The app measures how smooth the road is with your phone's accelerometer, gyroscope and GPS while you record a drive. <b>By default everything stays on your phone.</b></li>
+<li>If you switch on the optional <b>Online mode</b>, anonymous, trimmed readings are sent to our server so that other drivers get better routes. You can switch it off and delete what you sent at any time.</li>
+<li>No advertising, no third-party analytics or tracking libraries, no sale of data, no account with us. The app has no sign-in to Google or to us.</li>
+</ul>
+
+<h2>What stays on your phone</h2>
+<ul>
+<li>Your recordings (positions, speed, smoothness scores, obstacles detected or marked by you), your cars and their settings, your options and your favourite places.</li>
+<li>The e-mail address of the Google account you pick when you first open the app. It is only a label for your own data. It is chosen with the Android account chooser (the app never sees your password and is not signed in to Google) and is <b>never sent to us or to anyone else</b>.</li>
+</ul>
+<p><b>Backup file.</b> Options → Your data → Export creates a file with your recordings, cars, settings and that e-mail label, and opens the Android share sheet. The file goes only where <i>you</i> send it (Drive, e-mail, another app). Keep it private. The app reminds you now and then to make a copy, because recordings exist only on your phone.</p>
+<p><b>Delete.</b> Options → Your data → Delete all removes everything on the phone, and uninstalling the app removes it too.</p>
+
+<h2>Online mode (off by default)</h2>
+<p>If you switch it on, after each trip the app sends our server:</p>
+<ul>
+<li>points along the trip rounded to about 1 metre, the <i>day</i> (not the time), a smoothness score for each point already adjusted for your car, and the obstacles detected or confirmed by you;</li>
+<li>a random anonymous identifier made on your phone (not your advertising id and not derived from your e-mail) so that the server can count different devices, ignore a retry, and delete your part when you ask;</li>
+<li>a few <b>anonymous facts about the phone and how the app is used</b>: the day, the Android and app versions, the country and language, the sensor sampling rate, the suspension setting of the car, how many vehicles you use (a number, never their names), which options are set (for example units, theme, map provider; never addresses, favourite places, e-mail, car names or keys), a few numbers about the trip (distance, duration, how smooth it was) and counters of how often you used each feature since the last trip.</li>
+</ul>
+<p>The <b>first and last 300 metres of every trip</b> are cut off and trips shorter than about 800 metres send nothing, so your home and destinations are not revealed. No car name, person name or e-mail is sent, and nothing links the readings of one trip together (only a batch number per device, so that a retry is never counted twice).</p>
+<p>Readings that are far from what other drivers recorded on the same road are kept apart (quarantine) and are not used for the averages other users get; this is automatic.</p>
+<p><b>What the server does.</b> It combines everyone's readings into per-road-cell averages used to plan smoother routes and loops, which the app can ask the server for. It keeps these per-cell, per-direction, per-day sums and obstacle classifications, the anonymous facts above, and the quarantine entries and device flags, all tied to the random identifier (stored only in a hashed form) and not to you, for <b>up to two years</b>. We do not keep access logs with IP addresses on our server (the hosting provider may keep its own infrastructure logs). Backups of the database are kept for a limited time (up to 30 days) and are deleted with it.</p>
+<p><b>Where.</b> The server runs on Google Cloud in the <b>United States</b> (region us-central1). By switching Online mode on you agree to this transfer. The data is anonymous aggregates and a random identifier; if you are in the EU/EEA, the transfer is based on your consent.</p>
+<p><b>Delete.</b> Options → Online mode → <i>Delete my data on the server</i> removes everything the server holds for your identifier. If you cannot use the app (for example you uninstalled it), write to <a href="mailto:support@sweettarmac.com">support@sweettarmac.com</a>: because the server holds no names, we can only find your data if you give us the last characters of your anonymous identifier, which that screen shows. We answer within 30 days.</p>
+
+<h2>Services the app talks to</h2>
+<p>To work, the app asks the services you choose in Options (by default OpenStreetMap map tiles and a public OSRM routing server; optionally MapTiler, Stadia Maps, openrouteservice, GraphHopper, Nominatim) for map tiles, routes and place search, and the public Overpass API for known speed bumps, traffic lights and crossings. They receive what is needed for that request: for example the start, destination and detour points of a route, the text you search for, or the map area you look at. Your IP address reaches them as with any web request. They have their own privacy policies. If you use Google Maps, Waze or another app to navigate, the route you send them is handled by that app. Without internet the app still records and shows your own roads; planning routes and loops needs a routing service.</p>
+
+<h2>Permissions</h2>
+<table>
+<tr><th>Permission</th><th>Why</th></tr>
+<tr><td>Precise location (while the app is in use or recording)</td><td>To place your readings and your position on the map and to plan from where you are. A foreground notification is shown while recording. We do <b>not</b> ask for background location.</td></tr>
+<tr><td>Motion sensors (accelerometer, gyroscope, high sampling rate)</td><td>To measure the road surface and the rocking of the car, to detect bumps and holes, and to notice that the phone has been moved in its mount. Sensor data is turned into scores on the phone; raw sensor data is not sent anywhere.</td></tr>
+<tr><td>Notifications, foreground service, wake lock</td><td>The recording notification and keeping the recording running with the screen off.</td></tr>
+<tr><td>Network access</td><td>Map tiles, routes, search and, only if you switch it on, Online mode.</td></tr>
+</table>
+<p>We do not ask for contacts, photos, files, camera or microphone.</p>
+
+<h2>Legal basis (EU/EEA, UK)</h2>
+<p>Recording on your phone: you ask for it by pressing Record (performance of the service you request). Location permission and Online mode: your consent, which you can withdraw at any time by switching Online mode off, withdrawing the permission in Android settings and deleting your data as described above. The anonymous usage facts: our legitimate interest in improving the app, sent only while Online mode is on.</p>
+
+<h2>Your choices and rights</h2>
+<p>You can use the app without Online mode. You can stop or delete recordings, delete everything on the phone, and delete what you sent to the server (see above). You have the right of access, correction, deletion, restriction, objection and portability under the GDPR; because the server holds only anonymous aggregates tied to a random identifier, we can act on them only for the identifier you give us. For any request or question write to <a href="mailto:support@sweettarmac.com">support@sweettarmac.com</a>. You may also complain to your data protection authority (in Portugal: Comissão Nacional de Proteção de Dados, <a href="https://www.cnpd.pt">cnpd.pt</a>).</p>
+
+<h2>Security</h2>
+<p>All communication with our server and with the services above uses HTTPS. The server stores the identifier only in hashed form and keeps its secrets outside the code. No system is perfectly secure, which is one more reason the data we hold is minimal and anonymous.</p>
+
+<h2>Children</h2>
+<p>The app is meant for drivers, aged 18 and over. It is not directed at children, and it must not be used while driving: set it up before you start and never handle it on the road.</p>
+
+<h2>Test versions</h2>
+<p>While the app is in testing, the server may be reset, moved or switched off, and data sent in Online mode may be deleted without notice. Nothing is sold or shared with advertisers at any stage.</p>
+
+<h2>Changes</h2>
+<p>If this policy changes we will publish the new version here and change the date above.</p>
+<p>Publisher and data controller: Filipe B, Portugal – <a href="mailto:support@sweettarmac.com">support@sweettarmac.com</a>.</p>
+</body></html>
