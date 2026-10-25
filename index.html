@@ -2,280 +2,149 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Sweet Tarmac – the journey is the point</title>
-<meta name="description" content="Sweet Tarmac maps how smooth the roads are, then plans a loop that starts and ends where you are, over the best roads you know: no bumps, holes or bad asphalt, fewer traffic lights, more driving.">
-<link rel="icon" href="img/icon.png" type="image/png">
-<link rel="apple-touch-icon" href="img/icon.png">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>SweetTarmac — Coming soon</title>
+<meta name="description" content="SweetTarmac maps how smooth the roads really are and routes you along the sweetest tarmac. Coming soon for Android.">
+<meta name="theme-color" content="#121614">
+<meta property="og:title" content="SweetTarmac — Coming soon">
+<meta property="og:description" content="Find the smoothest roads. Enjoy every bend.">
+<meta property="og:url" content="https://sweettarmac.com/">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23121614'/%3E%3Cpath d='M14 50 C 22 30, 42 34, 50 14' fill='none' stroke='%23F2C14E' stroke-width='7' stroke-linecap='round'/%3E%3C/svg%3E">
 <style>
-:root{--ink:#10302c;--muted:#2f4a45;--bg:#f4faf8;--card:#ffffff;--line:#d3e5e0;--teal:#2db892;--deep:#0f3d3a;--loop:#7dd3fc;--loopdeep:#0c4a6e;--gold:#d4af37;--explore:#86efac;
---c1:#13804f;--c2:#9cc63b;--c3:#e9c53a;--c4:#ef8b2c;--c5:#d63a2f;--shadow:0 10px 30px rgba(15,61,58,.14)}
-@media (prefers-color-scheme:dark){:root{--ink:#e6f2ef;--muted:#c2d9d3;--bg:#0b1513;--card:#122320;--line:#22403b;--deep:#bfeee2;--loopdeep:#bae6fd;--shadow:0 10px 30px rgba(0,0,0,.45)}}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif}
-a{color:inherit}
-img{max-width:100%;display:block}
-.wrap{max-width:1120px;margin:0 auto;padding:0 20px}
-header.top{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
-header.top .wrap{display:flex;align-items:center;gap:18px;height:62px}
-.brand{display:flex;align-items:center;gap:10px;font-weight:800;text-decoration:none;letter-spacing:-.3px}
-.brand img{width:34px;height:34px;border-radius:9px;object-fit:cover}
-nav{margin-left:auto;display:flex;gap:6px;flex-wrap:wrap}
-nav a{padding:8px 12px;border-radius:10px;text-decoration:none;font-size:15px;font-weight:600;color:var(--muted)}
-nav a:hover{background:var(--card);color:var(--ink)}
-nav a.cta{background:var(--teal);color:#06231d}
-h1,h2,h3{line-height:1.15;letter-spacing:-.5px;margin:0 0 .5em}
-h1{font-size:clamp(2.4rem,6vw,4.1rem);font-weight:850}
-h2{font-size:clamp(1.8rem,4vw,2.7rem);font-weight:820}
-h3{font-size:1.25rem}
-.lead{font-size:1.2rem;color:var(--muted);max-width:60ch}
-.btn{display:inline-block;padding:14px 22px;border-radius:14px;font-weight:750;text-decoration:none;background:var(--teal);color:#06231d;box-shadow:0 6px 18px rgba(45,184,146,.35)}
-.btn.ghost{background:transparent;color:var(--ink);box-shadow:none;border:2px solid var(--line)}
-.btn.loop{background:var(--loop);color:#0c4a6e;box-shadow:0 6px 18px rgba(125,211,252,.4)}
-section{padding:84px 0}
-.hero{padding:64px 0 40px;background:radial-gradient(900px 420px at 80% 0%,color-mix(in srgb,var(--teal) 22%,transparent),transparent 70%),radial-gradient(700px 400px at 0% 100%,color-mix(in srgb,var(--loop) 22%,transparent),transparent 70%)}
-.hero .wrap{display:grid;grid-template-columns:1.15fr .85fr;gap:40px;align-items:center}
-.hero .btns{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px}
-.hero small{display:block;margin-top:16px;color:var(--muted)}
-.phone{border:9px solid #0e1a18;border-radius:38px;overflow:hidden;box-shadow:var(--shadow);background:#0e1a18;max-width:300px;margin:0 auto}
-.phone img{width:100%;height:auto}
-.phones{display:flex;gap:22px;justify-content:center;flex-wrap:wrap}
-.phones .phone{max-width:236px;margin:0}
-.tilt1{transform:rotate(-2.5deg)}.tilt2{transform:rotate(2.5deg) translateY(18px)}
-.cap{text-align:center;font-size:14px;color:var(--muted);margin-top:12px}
-.manifesto{background:#0f3d3a;color:#e6f2ef}
-.manifesto h2{color:#fff}
-.manifesto .grid{display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:center}
-.manifesto p{font-size:1.15rem;color:#cfe6e0}
-.manifesto em{color:var(--teal);font-style:normal;font-weight:700}
-.pills{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
-.pill{padding:8px 14px;border-radius:999px;border:1px solid #2c5c55;font-size:15px;color:#cfe6e0}
-.loopsec{background:linear-gradient(180deg,color-mix(in srgb,var(--loop) 20%,var(--bg)),var(--bg))}
-.badge{display:inline-block;padding:6px 14px;border-radius:999px;background:var(--loop);color:#0c4a6e;font-weight:800;letter-spacing:.8px;font-size:13px;text-transform:uppercase;margin-bottom:14px}
-.two{display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:center}
-.card{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:26px;box-shadow:var(--shadow)}
-.infog{background:var(--card);border:1px solid var(--line);border-radius:26px;padding:14px;box-shadow:var(--shadow)}
-.infog svg{width:100%;height:auto;display:block}
-.problem{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin:34px 0}
-.problem .card{padding:22px}
-.problem .ic{font-size:30px}
-.rules{counter-reset:r;display:grid;gap:12px;margin:22px 0;padding:0;list-style:none}
-.rules li{counter-increment:r;display:flex;gap:14px;align-items:flex-start;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:14px 16px}
-.rules li::before{content:counter(r);flex:none;width:34px;height:34px;border-radius:50%;background:var(--loop);color:#0c4a6e;font-weight:850;display:grid;place-items:center}
-.rules b{display:block}
-.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:30px}
-.step{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:20px}
-.step svg{width:100%;height:96px}
-.step h3{margin:.6em 0 .3em;font-size:1.1rem}
-.step p{margin:0;font-size:15px;color:var(--muted)}
-.scale{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin-top:22px}
-.scale div{border-radius:14px;padding:14px 10px;text-align:center;color:#fff;font-weight:800;line-height:1.2}
-.scale small{display:block;font-weight:600;opacity:.92}
-.feats{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:34px}
-.feat{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:22px}
-.feat h3{display:flex;align-items:center;gap:10px}
-.feat h3 i{font-style:normal;display:grid;place-items:center;width:38px;height:38px;border-radius:12px;background:color-mix(in srgb,var(--teal) 24%,transparent);font-size:20px}
-.feat p{margin:0;color:var(--muted);font-size:15.5px}
-.strip{display:flex;gap:22px;overflow-x:auto;padding:30px 6px 12px;scroll-snap-type:x mandatory}
-.strip .phone{flex:none;width:224px;scroll-snap-align:center}
-.gold{border-color:var(--gold)!important}
-.community{background:color-mix(in srgb,var(--gold) 10%,var(--bg))}
-.flow{display:grid;grid-template-columns:1fr auto 1fr auto 1fr;gap:12px;align-items:stretch;margin-top:30px}
-.flow .node{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:18px;font-size:15px}
-.flow .node b{display:block;margin-bottom:4px;font-size:16px}
-.flow .arr{align-self:center;font-size:28px;color:#0f7a5f}@media (prefers-color-scheme:dark){.flow .arr{color:#2db892}}
-.cta{background:#0f3d3a;color:#e6f2ef;text-align:center}
-.cta h2{color:#fff}
-footer{padding:36px 0;color:var(--muted);font-size:14px;border-top:1px solid var(--line)}
-footer .wrap{display:flex;flex-wrap:wrap;gap:12px 24px;justify-content:space-between}
-@media (max-width:900px){.hero .wrap,.two,.manifesto .grid{grid-template-columns:1fr}.feats,.problem{grid-template-columns:1fr}.steps{grid-template-columns:1fr 1fr}.flow{grid-template-columns:1fr}.flow .arr{transform:rotate(90deg);justify-self:center}.scale{grid-template-columns:1fr 1fr}nav a:not(.cta){display:none}section{padding:60px 0}}
+  :root {
+    --asphalt: #121614;
+    --asphalt-2: #1A201D;
+    --ink: #F3F1EA;
+    --muted: #A9B1AC;
+    --line: #F2C14E;      /* road paint */
+    --smooth: #2BC88A;    /* smooth road */
+    --good: #A8D046;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; height: 100%; }
+  body {
+    min-height: 100svh;
+    background:
+      radial-gradient(1200px 600px at 85% -10%, rgba(43,200,138,.12), transparent 60%),
+      radial-gradient(900px 500px at -10% 110%, rgba(242,193,78,.10), transparent 60%),
+      var(--asphalt);
+    color: var(--ink);
+    font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    display: flex; flex-direction: column;
+    overflow-x: hidden; position: relative;
+  }
+  /* subtle asphalt grain */
+  body::before {
+    content: ""; position: absolute; inset: 0; pointer-events: none; opacity: .35;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 .06 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+
+  header { padding: max(20px, env(safe-area-inset-top)) 24px 0; display: flex; align-items: center; gap: 10px; position: relative; z-index: 1; }
+  .mark { width: 34px; height: 34px; border-radius: 10px; background: var(--asphalt-2); display: grid; place-items: center; box-shadow: inset 0 0 0 1px rgba(255,255,255,.06); }
+  .brand { font-weight: 800; letter-spacing: .2px; font-size: 18px; }
+  .brand span { color: var(--line); }
+
+  main { flex: 1; display: grid; place-items: center; padding: 24px; position: relative; z-index: 1; }
+  .hero { width: min(1120px, 100%); display: grid; grid-template-columns: 1.15fr 1fr; align-items: center; gap: 40px; }
+  .eyebrow {
+    display: inline-flex; align-items: center; gap: 8px; padding: 6px 12px; border-radius: 999px;
+    background: rgba(43,200,138,.12); color: var(--smooth); font-weight: 700; font-size: 13px; letter-spacing: .6px; text-transform: uppercase;
+  }
+  .eyebrow i { width: 8px; height: 8px; border-radius: 50%; background: var(--smooth); box-shadow: 0 0 0 0 rgba(43,200,138,.6); animation: pulse 2s infinite; }
+  @keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(43,200,138,.55); } 70% { box-shadow: 0 0 0 10px rgba(43,200,138,0); } 100% { box-shadow: 0 0 0 0 rgba(43,200,138,0); } }
+  h1 { font-size: clamp(42px, 6vw, 72px); line-height: .98; margin: 18px 0 16px; letter-spacing: -1.5px; font-weight: 850; }
+  h1 em { font-style: normal; color: var(--line); }
+  .lead { font-size: clamp(17px, 2vw, 20px); line-height: 1.5; color: var(--muted); max-width: 32em; margin: 0 0 26px; }
+  .chips { display: flex; flex-wrap: wrap; gap: 8px; margin: 0; padding: 0; list-style: none; }
+  .chips li { padding: 9px 13px; border-radius: 12px; background: var(--asphalt-2); box-shadow: inset 0 0 0 1px rgba(255,255,255,.06); font-size: 14px; color: var(--ink); display: flex; align-items: center; gap: 8px; }
+  .chips svg { width: 16px; height: 16px; flex: none; }
+
+  .road { width: 100%; height: auto; display: block; filter: drop-shadow(0 30px 40px rgba(0,0,0,.45)); }
+  .paint { stroke-dasharray: 18 22; animation: drive 1.6s linear infinite; }
+  @keyframes drive { to { stroke-dashoffset: -40; } }
+  .car { offset-path: path("M60 520 C 160 470, 170 360, 260 320 S 430 300, 470 210 S 520 70, 600 40"); offset-rotate: auto; animation: travel 7s ease-in-out infinite; }
+  @keyframes travel { 0% { offset-distance: 0%; } 100% { offset-distance: 100%; } }
+
+  footer a { color: var(--ink); text-decoration: underline; text-underline-offset: 3px; }
+  footer { padding: 18px 24px max(20px, env(safe-area-inset-bottom)); color: var(--muted); font-size: 13px; display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; position: relative; z-index: 1; }
+
+  @media (max-width: 820px) {
+    .hero { grid-template-columns: 1fr; gap: 18px; text-align: left; }
+    .art { order: -1; max-width: 460px; margin: 0 auto; width: 100%; }
+    main { place-items: start center; padding-top: 8px; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .paint, .car, .eyebrow i { animation: none; }
+  }
 </style>
 </head>
 <body>
-
-<header class="top"><div class="wrap">
-  <a class="brand" href="#top"><img src="img/icon.png" alt="" width="34" height="34">Sweet Tarmac</a>
-  <nav aria-label="Main">
-    <a href="#loop">The Loop</a><a href="#how">How it works</a><a href="#features">Features</a><a href="#community">Community</a>
-    <a class="cta" href="#new">What’s new</a>
-  </nav>
-</div></header>
-
-<main id="top">
-
-<!-- ============================ HERO ============================ -->
-<section class="hero"><div class="wrap">
-  <div>
-    <span class="badge">For people who love to drive</span>
-    <h1>Because the journey is the point.</h1>
-    <p class="lead">Sweet Tarmac listens to the road while you drive, paints every road from smooth to rough, and then does what no navigator does: it plans a <b>loop that starts and ends exactly where you are</b>, over the best roads you know, so you can just drive.</p>
-    <div class="btns"><a class="btn loop" href="#loop">Meet the Loop</a><a class="btn ghost" href="#features">See the features</a></div>
-    <small>An Android app, in six languages, now in closed testing. Your recordings stay on your phone unless you choose otherwise.</small>
+<header>
+  <div class="mark" aria-hidden="true">
+    <svg width="22" height="22" viewBox="0 0 64 64"><path d="M10 54 C 20 30, 44 34, 54 10" fill="none" stroke="#F2C14E" stroke-width="8" stroke-linecap="round"/></svg>
   </div>
-  <div><div class="phone tilt1"><img src="img/loop-results.jpg" alt="The Loop tab: three loops with their smoothness, traffic lights and crossings, and the chosen loop drawn on the map" width="786" height="1600"></div></div>
-</div></section>
+  <div class="brand">Sweet<span>Tarmac</span></div>
+</header>
 
-<!-- ============================ MANIFESTO ============================ -->
-<section class="manifesto"><div class="wrap grid">
-  <div>
-    <h2>Your car is freedom.</h2>
-    <p>You don’t want to get somewhere. You want to <em>drive</em>: go through the gears, flow through the corners, feel a machine you admire do what it was made for. The destination is just the place you come back to.</p>
-    <p>What gets in the way is never the car. It is the bump you didn’t see, the pothole at the apex, the manhole cover in the middle of the best bend, the broken asphalt, the cobbles, the fourth traffic light in a row that kills the flow.</p>
-    <p>So we count them. Every drive anyone records makes the map better, and the people who love the same thing get the roads worth driving.</p>
-  </div>
-  <div class="card" style="background:#0f2a27;border-color:#24514b;color:#cfe6e0">
-    <h3 style="color:#fff">What “a nice drive” is made of</h3>
-    <div class="pills">
-      <span class="pill">Smooth asphalt</span><span class="pill">No potholes</span><span class="pill">No manhole covers in the bend</span><span class="pill">No speed bumps</span><span class="pill">No bad cobbles</span><span class="pill">Fewer traffic lights</span><span class="pill">Flowing corners</span><span class="pill">Back where you started</span>
-    </div>
-    <p style="margin-top:22px;font-size:1rem">Sweet Tarmac measures the first five, counts the next two, and builds the last two into the route.</p>
-  </div>
-</div></section>
-
-<!-- ============================ THE LOOP ============================ -->
-<section class="loopsec" id="loop"><div class="wrap">
-  <span class="badge">The flagship</span>
-  <h2>The Loop: “take me for a drive, and bring me back.”</h2>
-  <p class="lead">Every other app takes you from A to B by the fastest road. The Loop has no B. You say how long (or how far) you want to drive, and it draws a round trip that begins and ends at the exact spot where you are, on the smoothest roads you have recorded.</p>
-
-  <div class="two" style="margin-top:40px">
-    <div class="infog">
-      <svg viewBox="0 0 640 430" role="img" aria-labelledby="loopTitle loopDesc"><title id="loopTitle">A real Loop follows the streets</title><desc id="loopDesc">A map-like drawing of a loop that follows real roads out of the city and back to the same flag. It is not a circle: it follows the streets as they are, runs mostly over smooth green roads, and stays away from two other roads that have a pothole, a speed bump, bad cobbles and traffic lights.</desc><rect width="640" height="430" rx="22" fill="#e4f3ef"/><path d="M466.3 270.9 L468.1 270.4 L467.1 267.1 L463.5 267.8 L460.2 268.4 L459.2 268.6 L459.8 271.6 L460.3 274.5 L460.6 276.1 L460.9 277.6 L461.0 278.1 L460.9 279.0 L460.7 279.6 L460.4 280.3 L459.3 282.6 L458.3 284.8 L457.4 286.6 L456.9 287.7 L454.7 292.2 L453.4 295.0 L453.0 295.6 L452.6 296.3 L450.4 301.0 L450.1 301.5 L450.0 301.7 L449.7 301.9 L449.2 302.3 L448.9 302.4 L448.5 302.7 L448.3 303.0 L448.2 303.5 L448.2 303.8 L448.4 304.3 L448.7 304.6 L449.1 304.8 L449.5 304.9 L450.0 305.0 L450.3 305.2 L450.6 305.4 L451.2 306.0 L453.3 309.1 L452.3 309.8 L450.8 311.0 L449.4 312.0 L447.7 313.2 L445.3 314.8 L443.4 316.1 L441.1 317.6 L440.3 318.1 L439.6 318.3 L438.2 318.6 L437.1 318.9 L436.7 319.1 L436.6 319.9 L436.8 322.5 L436.8 323.4 L436.9 323.7 L437.5 325.9 L438.0 327.6 L438.4 329.7 L438.6 330.4 L439.4 332.1 L439.8 332.8 L441.4 335.7 L442.1 337.9 L442.3 338.7 L442.6 339.5 L443.0 341.2 L443.0 341.4 L442.9 341.7 L442.8 342.0 L442.6 342.2 L441.4 343.4 L441.3 343.6 L441.3 344.8 L442.5 350.7 L442.7 351.5 L442.8 352.4 L443.0 353.1 L443.1 353.8 L443.2 354.3 L443.6 355.1 L446.7 355.2 L448.5 355.0 L448.3 352.5 L448.2 351.3 L446.0 352.0 L445.1 352.3 L444.1 352.6 L443.0 353.0 L443.0 353.7 L443.2 354.2 L443.3 355.1 L443.4 357.1 L443.4 357.7 L443.4 357.9 L443.2 358.1 L442.8 358.1 L439.5 358.0 L438.3 358.1 L438.0 358.2 L437.3 358.3 L436.0 358.7 L433.2 360.4 L426.9 364.3 L425.0 365.2 L423.2 365.7 L419.9 366.6 L418.4 366.9 L417.4 366.9 L411.4 366.9 L409.2 366.8 L408.0 366.8 L403.9 366.9 L402.3 366.8 L401.6 367.0 L401.0 367.2 L399.4 367.6 L397.6 368.3 L396.4 368.8 L395.3 369.3 L393.2 369.5 L392.5 369.7 L392.0 370.1 L391.1 371.6 L389.1 373.7 L386.3 375.5 L384.4 376.7 L382.1 378.2 L378.6 380.0 L374.3 381.8 L373.2 382.2 L367.8 383.8 L363.9 384.5 L363.0 384.7 L361.3 385.1 L351.7 387.1 L348.1 387.5 L342.5 388.0 L340.0 388.2 L338.0 388.5 L336.9 388.8 L333.6 389.6 L326.7 391.2 L321.2 392.5 L319.5 392.8 L315.9 393.7 L313.0 394.2 L307.7 394.8 L300.9 395.6 L299.2 395.7 L296.9 396.0 L294.8 395.9 L289.6 394.0 L288.1 393.4 L286.1 392.4 L277.1 385.8 L275.9 384.9 L275.3 384.4 L274.6 383.7 L275.1 382.5 L275.4 381.8 L275.4 381.4 L275.3 381.0 L275.2 380.7 L274.7 380.0 L274.5 379.7 L274.3 379.2 L274.2 378.6 L274.1 377.7 L274.1 377.0 L274.2 376.2 L274.3 375.5 L274.4 374.8 L274.6 374.0 L274.8 372.1 L275.4 370.4 L276.0 368.9 L276.4 367.9 L276.8 367.1 L277.2 366.3 L277.9 365.2 L278.8 363.9 L281.2 361.0 L281.9 360.2 L282.5 359.3 L283.2 358.3 L283.8 357.3 L284.4 355.7 L284.8 354.8 L285.1 353.7 L285.3 352.6 L285.4 351.6 L285.4 350.7 L285.4 349.6 L285.4 348.4 L285.0 344.6 L284.9 343.5 L284.8 342.3 L284.8 341.4 L284.9 340.2 L285.0 339.2 L285.1 338.3 L285.4 337.3 L285.6 336.3 L286.0 335.3 L286.4 334.4 L286.8 333.5 L287.4 332.4 L291.0 326.9 L291.9 325.6 L292.6 324.8 L293.4 324.0 L294.3 323.3 L295.3 322.5 L311.3 312.3 L313.7 309.7 L314.3 309.1 L316.4 308.0 L317.3 307.2 L317.3 306.4 L317.0 305.5 L316.5 303.3 L315.0 297.3 L314.4 295.2 L314.3 294.3 L314.7 292.5 L315.6 290.9 L315.8 289.6 L315.2 287.6 L315.0 285.9 L315.6 284.0 L317.4 281.6 L320.6 280.6 L321.4 279.3 L323.5 275.4 L324.4 274.7 L323.9 274.3 L327.0 273.0 L327.9 273.0 L328.6 273.1 L330.2 273.8 L331.6 274.3 L332.6 271.9 L332.9 271.7 L333.4 271.8 L334.9 273.3 L337.0 276.2 L338.7 278.5 L339.5 279.7 L339.9 280.6 L339.9 282.0 L339.9 284.4 L340.2 289.4 L340.3 291.1 L340.4 292.8 L340.7 293.8 L341.2 294.7 L342.4 295.6 L346.4 297.8 L347.6 298.9 L348.2 300.0 L348.3 300.6 L348.2 300.9 L348.3 301.3 L348.5 301.8 L348.7 302.2 L349.2 303.3 L350.0 305.3 L350.1 305.7 L349.8 305.9 L349.5 306.0 L349.2 306.6 L348.8 307.0 L345.8 308.5 L345.3 307.7 L346.2 306.4 L350.4 304.6 L355.4 303.2 L358.2 302.9 L359.6 302.9 L361.0 302.9 L362.5 303.1 L364.4 303.3 L367.9 304.2 L372.1 305.0 L374.7 305.3 L376.9 305.7 L379.0 306.2 L382.9 307.3 L387.4 308.7 L399.0 312.2 L400.1 312.3 L401.2 312.3 L402.3 312.2 L406.0 311.3 L410.2 310.3 L412.7 309.7 L414.4 309.3 L415.1 309.2 L416.5 308.9 L417.4 308.7 L418.0 308.7 L418.4 308.6 L421.3 307.9 L423.0 307.5 L425.4 306.8 L427.2 306.3 L428.2 306.0 L429.0 305.7 L430.8 305.4 L432.0 305.2 L433.0 305.0 L434.6 304.9 L435.4 304.8 L436.3 304.7 L441.1 304.4 L441.9 304.3 L443.9 304.2 L446.6 304.0 L447.4 303.8 L447.7 303.8 L448.2 304.0 L448.5 304.4 L448.8 304.7 L449.2 304.8 L449.7 304.8 L450.1 304.7 L450.4 304.5 L450.7 304.1 L450.8 303.8 L450.8 303.3 L450.7 302.9 L450.5 302.4 L450.5 302.0 L450.5 301.7 L450.8 301.2 L452.4 297.8 L453.5 295.5 L454.9 292.6 L456.1 290.0 L457.3 287.5 L458.4 285.1 L460.0 281.8 L460.7 280.3 L461.6 279.2 L461.7 278.9 L461.7 278.5 L461.5 277.9 L461.2 277.3 L460.8 275.2 L460.7 274.5 L460.1 271.6 L461.0 271.5 L463.8 271.2 L465.2 271.0 L466.3 270.9" fill="none" stroke="#b8cfc9" stroke-width="7" stroke-linejoin="round" stroke-linecap="round"/><path d="M466.3 270.9 L468.1 270.4 L467.1 267.1 L463.5 267.8 L460.2 268.4 L459.2 268.6 L459.8 271.6 L460.3 274.5 L460.6 276.1 L460.9 277.6 L461.0 278.1 L460.9 279.0 L460.7 279.6 L460.4 280.3 L459.3 282.6 L458.3 284.8 L457.4 286.6 L456.9 287.7 L454.7 292.2 L453.4 295.0 L453.0 295.6 L452.6 296.3 L452.2 296.9 L451.9 297.5 L450.1 301.4 L449.8 301.7 L448.2 302.8 L447.8 303.0 L446.6 303.4 L444.0 303.9 L433.9 304.7 L430.3 305.1 L427.4 305.8 L424.0 306.7 L414.7 308.9 L412.2 309.5 L409.8 310.1 L405.9 311.1 L404.0 311.6 L401.9 312.0 L401.0 312.1 L399.9 312.1 L398.6 311.8 L389.5 309.0 L387.6 308.5 L382.2 306.8 L380.3 306.2 L378.3 305.6 L374.8 305.0 L371.9 304.7 L370.7 304.5 L365.1 303.1 L364.0 302.8 L361.9 302.6 L360.3 302.5 L357.5 302.6 L353.5 303.2 L348.1 305.0 L338.0 309.8 L331.0 313.1 L325.3 315.4 L321.7 316.5 L319.9 316.9 L316.9 316.6 L313.7 315.0 L310.8 312.3 L307.9 308.0 L306.6 306.1 L304.2 303.0 L302.6 301.4 L289.7 289.0 L284.7 284.0 L280.2 279.2 L277.0 275.9 L273.9 272.2 L271.8 268.1 L272.0 267.6 L272.4 267.5 L272.9 267.3 L273.3 267.0 L275.0 265.7 L276.2 264.7 L276.8 264.2 L277.3 263.9 L278.2 263.4 L278.5 263.1 L278.6 261.7 L278.4 260.6 L278.4 259.9 L278.8 259.2 L279.3 258.3 L279.8 257.9 L280.9 257.6 L281.3 257.4 L281.3 256.9 L281.0 256.4 L281.0 255.9 L281.4 254.8 L281.8 254.3 L282.0 254.0 L281.8 253.6 L281.3 253.6 L280.4 253.8 L279.1 253.8 L277.3 252.9 L276.4 252.0 L274.5 248.5 L274.1 247.6 L271.9 249.0 L270.4 247.9 L268.7 246.9 L267.3 246.7 L268.2 247.4 L270.2 247.9 L270.6 248.1 L272.7 248.4 L274.1 247.7 L275.7 250.8 L276.6 252.3 L277.9 253.3 L279.7 253.8 L280.8 254.0 L281.0 254.4 L280.4 254.5 L274.9 253.9 L270.3 251.6 L261.2 246.4 L255.3 243.1 L250.9 241.4 L241.7 238.4 L228.0 234.0 L220.1 233.5 L211.8 234.2 L210.0 234.8 L203.8 237.4 L201.6 238.1 L197.2 238.1 L188.4 238.0 L173.3 237.7 L164.7 237.6 L158.5 237.4 L154.8 236.8 L148.5 234.5 L143.6 232.6 L140.3 230.5 L134.8 225.2 L130.8 220.5 L129.9 217.2 L129.1 213.3 L127.3 210.6 L123.1 206.1 L119.3 200.7 L114.7 193.8 L112.3 189.9 L110.5 187.1 L109.5 186.1 L108.3 185.3 L107.0 184.1 L106.3 182.9 L105.9 180.3 L106.6 179.9 L107.3 179.8 L108.5 179.5 L110.5 178.6 L112.8 177.4 L114.4 176.4 L115.9 175.7 L117.1 174.9 L118.7 174.0 L120.4 173.0 L122.1 172.0 L124.5 170.7 L124.8 170.7 L125.1 171.0 L125.2 171.3 L125.3 171.4 L125.5 171.3 L126.3 171.0 L127.3 170.8 L128.8 170.9 L129.9 171.4 L130.7 172.0 L130.4 171.7 L129.6 171.2 L128.3 170.8 L126.7 170.9 L126.0 171.1 L125.4 171.0 L125.1 170.7 L125.1 170.2 L125.5 169.3 L125.6 168.6 L125.4 167.6 L125.1 166.6 L125.2 166.3 L125.2 166.1 L124.7 165.7 L123.7 162.3 L124.7 160.4 L126.0 158.4 L127.5 157.5 L128.0 156.8 L128.6 155.4 L129.0 154.1 L128.5 152.5 L128.3 147.1 L129.1 145.1 L131.4 143.1 L131.9 143.1 L132.4 142.9 L132.8 142.9 L134.1 143.5 L135.1 144.2 L137.4 146.6 L140.1 149.6 L143.0 152.2 L145.7 154.9 L147.1 156.3 L148.5 157.9 L150.1 160.0 L152.6 163.1 L154.6 164.9 L155.7 165.7 L156.8 166.2 L160.4 167.9 L167.7 171.2 L172.0 172.9 L173.4 173.8 L174.2 174.5 L174.8 175.5 L175.0 176.6 L175.0 177.7 L174.5 179.5 L174.2 180.5 L174.2 181.6 L174.5 182.6 L175.8 184.9 L176.2 186.0 L176.4 186.9 L176.4 188.3 L176.4 191.2 L175.2 202.2 L172.8 213.6 L170.9 222.3 L169.3 231.7 L168.6 235.8 L167.6 238.8 L166.5 240.9 L165.2 243.7 L163.2 247.8 L162.6 249.6 L162.1 253.1 L161.8 256.1 L161.1 258.1 L159.4 261.6 L157.8 266.1 L157.9 270.6 L159.9 275.3 L164.0 281.0 L165.4 285.0 L166.5 294.1 L167.6 305.5 L168.4 311.8 L170.2 315.7 L174.2 322.5 L177.8 328.3 L180.8 333.4 L185.3 340.8 L185.6 343.0 L185.2 344.8 L185.3 345.7 L185.4 346.5 L185.2 347.1 L184.4 347.7 L183.9 348.4 L183.5 349.3 L183.3 350.4 L183.0 352.6 L182.8 353.6 L182.4 354.0 L182.2 354.3 L182.2 354.7 L182.5 355.1 L182.8 355.2 L183.3 355.2 L183.6 354.9 L183.7 354.5 L183.6 354.0 L183.3 353.6 L183.2 353.0 L183.5 349.8 L183.9 348.8 L184.3 348.2 L185.4 347.8 L186.0 347.8 L186.6 347.5 L186.9 347.1 L187.6 346.6 L189.3 346.0 L190.8 346.1 L191.0 347.0 L190.2 347.6 L189.3 347.1 L187.7 344.0 L184.9 339.4 L184.7 337.6 L185.6 336.4 L186.4 336.2 L187.5 336.4 L191.2 337.4 L194.7 337.8 L202.0 338.0 L205.0 338.0 L208.1 337.4 L210.4 336.4 L213.6 333.8 L215.3 331.9 L220.0 324.4 L221.5 322.5 L222.9 321.0 L224.3 319.9 L225.5 319.1 L226.9 318.3 L228.5 317.5 L229.7 317.1 L231.2 316.7 L233.3 316.4 L235.6 316.3 L237.1 316.4 L238.6 316.6 L240.1 317.0 L241.8 317.6 L244.0 318.6 L246.2 319.9 L249.3 321.7 L256.6 325.9 L261.3 327.9 L263.8 328.8 L269.0 329.9 L278.8 330.0 L287.3 328.9 L292.3 327.9 L301.6 324.9 L310.6 321.4 L323.5 316.6 L334.6 311.8 L341.5 308.6 L348.8 305.2 L353.6 303.6 L357.6 302.9 L359.2 302.9 L360.5 302.9 L361.9 303.0 L364.0 303.3 L365.2 303.5 L371.7 305.0 L373.3 305.2 L376.1 305.5 L378.2 305.9 L381.5 306.9 L386.8 308.5 L398.4 312.0 L399.7 312.3 L400.8 312.4 L401.9 312.3 L404.6 311.7 L409.8 310.4 L411.4 310.0 L413.8 309.4 L414.7 309.2 L415.4 309.1 L417.3 308.8 L417.8 308.7 L418.3 308.6 L420.4 308.1 L421.9 307.7 L425.0 306.9 L427.1 306.3 L427.3 306.2 L428.6 305.8 L429.6 305.6 L431.6 305.2 L432.9 305.0 L433.4 305.0 L435.1 304.9 L436.1 304.7 L438.5 304.6 L441.6 304.3 L443.5 304.2 L445.1 304.1 L447.2 303.9 L447.5 303.8 L448.0 304.0 L448.4 304.3 L448.7 304.6 L449.1 304.8 L449.5 304.9 L450.0 304.7 L450.4 304.5 L450.6 304.3 L450.8 303.9 L450.8 303.5 L450.7 303.1 L450.5 302.6 L450.5 302.2 L450.5 301.7 L450.6 301.4 L451.6 299.4 L453.0 296.5 L454.4 293.6 L456.0 290.3 L457.1 287.8 L458.1 285.8 L459.8 282.2 L460.7 280.4 L461.1 279.8 L461.7 279.0 L461.7 278.7 L461.7 278.3 L461.3 277.4 L461.1 276.9 L460.7 274.6 L460.2 271.9 L460.8 271.5 L463.5 271.2 L464.3 271.1 L466.3 270.9 L466.3 270.9" fill="none" stroke="#b8cfc9" stroke-width="7" stroke-linejoin="round" stroke-linecap="round"/><path d="M466.3 270.9 L468.2 271.1 L468.6 274.2 L469.2 274.5 L471.2 274.5 L473.0 274.4 L475.2 274.4 L476.1 274.2 L477.3 273.8 L478.4 273.3 L479.4 272.5 L480.3 271.9 L480.8 270.8 L484.7 270.5 L486.4 270.4 L486.5 269.0 L486.5 268.5 L486.6 268.0 L486.8 265.0 L487.1 260.9 L487.4 257.5 L487.6 255.3 L487.7 254.9 L488.0 254.4 L488.1 253.8 L488.2 252.9 L488.4 252.4 L489.9 249.8 L491.0 247.9 L491.5 247.0 L492.2 245.2 L492.5 243.6 L492.6 242.7 L492.6 242.4 L493.0 236.7 L493.1 235.3 L493.2 234.0 L493.3 232.4 L493.5 229.6 L494.0 223.7 L494.4 218.7 L494.5 217.6 L494.7 214.8 L495.2 208.1 L496.0 197.2 L496.1 195.6 L496.5 194.2 L497.2 193.5 L497.2 192.9 L497.0 192.5 L496.6 192.0 L496.7 188.9 L497.1 185.7 L497.3 183.5 L497.7 182.7 L498.2 182.2 L499.1 181.8 L501.3 181.3 L502.7 180.5 L503.5 179.5 L503.7 178.8 L504.3 175.5 L504.6 174.3 L504.9 173.6 L505.2 173.4 L505.2 173.1 L505.1 172.7 L504.9 171.9 L504.9 171.4 L505.2 170.0 L505.6 168.1 L505.7 166.9 L505.7 166.2 L505.2 163.8 L505.4 163.3 L505.3 162.9 L505.1 162.7 L504.7 162.0 L504.5 161.2 L504.2 159.9 L504.1 159.6 L503.4 156.1 L503.3 155.5 L502.5 151.7 L502.4 151.1 L501.8 148.5 L502.1 147.4 L504.7 143.8 L505.1 143.4 L505.6 143.2 L506.1 143.3 L506.6 143.8 L507.0 144.5 L507.2 144.7 L506.9 142.8 L506.7 141.6 L506.7 140.0 L506.5 138.2 L506.2 137.4 L504.9 137.0 L504.5 136.6 L504.4 136.2 L504.8 135.1 L505.3 135.5 L507.0 135.5 L507.7 135.5 L509.5 134.9 L510.5 134.7 L511.1 134.8 L512.6 135.5 L514.2 136.9 L514.2 137.6 L513.9 138.2 L513.3 138.4 L512.7 138.1 L512.4 137.5 L512.5 136.1 L513.6 133.8 L514.5 132.7 L516.3 130.8 L521.4 125.2 L524.5 121.5 L526.1 119.6 L527.6 118.2 L529.5 117.3 L530.7 117.1 L532.4 117.0 L533.3 116.9 L533.9 116.4 L534.1 115.8 L534.1 115.2 L533.7 114.4 L531.2 111.1 L530.3 110.0 L529.9 109.3 L529.1 107.8 L527.0 104.0 L525.4 102.1 L524.7 101.2 L522.9 99.5 L521.7 98.7 L520.2 97.9 L518.7 97.3 L515.2 95.7 L513.5 94.8 L511.5 93.2 L506.1 87.8 L504.2 86.6 L501.7 85.6 L490.8 82.6 L487.8 81.7 L482.2 79.6 L475.8 77.2 L473.8 76.7 L462.8 75.1 L458.8 74.8 L457.3 73.9 L456.7 72.2 L457.0 68.0 L456.8 63.1 L453.4 54.5 L452.4 51.1 L452.3 46.5 L452.6 44.4 L452.6 42.6 L453.1 41.9 L453.8 42.4 L454.1 42.9 L453.9 43.9 L453.9 44.2 L454.2 44.3 L454.5 44.2 L454.7 43.7 L455.0 43.3 L455.0 42.7 L454.8 41.9 L455.2 41.2 L455.4 41.3 L455.6 41.2 L455.9 40.9 L456.5 40.5 L457.6 39.9 L459.4 40.5 L460.2 41.3 L459.7 40.9 L458.8 39.6 L457.7 39.6 L456.5 40.5 L455.9 40.9 L455.4 40.8 L455.2 41.0 L455.2 41.2 L454.9 41.5 L454.9 42.5 L455.0 43.1 L454.8 43.5 L454.3 43.7 L454.2 43.4 L453.9 42.5 L453.5 42.1 L453.3 41.4 L453.1 41.0 L452.6 41.0 L452.1 41.0 L451.5 40.7 L451.0 40.1 L450.8 39.2 L450.7 37.7 L450.7 36.3 L450.5 35.5 L450.1 34.9 L450.1 34.3 L449.7 34.0 L449.1 34.1 L448.8 34.6 L448.6 35.4 L447.4 36.7 L446.0 37.8 L445.2 37.9 L444.7 38.2 L444.6 38.7 L445.0 39.1 L445.4 39.2 L446.1 39.4 L447.0 40.3 L447.6 41.2 L448.5 43.1 L449.0 45.9 L449.0 49.5 L448.1 51.4 L447.9 52.7 L448.0 55.3 L446.9 59.3 L441.0 73.1 L439.0 80.1 L435.9 88.1 L430.6 94.4 L424.2 98.6 L418.7 100.5 L414.2 102.6 L411.6 104.2 L409.6 105.8 L408.3 107.0 L407.1 108.2 L406.2 109.3 L405.2 110.8 L404.6 111.9 L404.2 113.0 L403.9 114.1 L403.7 115.2 L403.7 116.3 L403.8 117.6 L404.0 118.7 L404.2 119.6 L404.7 121.2 L405.4 123.4 L406.2 125.5 L406.7 126.7 L407.2 127.8 L407.7 128.8 L408.5 130.0 L409.3 131.0 L410.0 132.1 L410.7 132.8 L412.9 134.8 L414.2 136.0 L415.6 137.6 L416.1 138.5 L416.8 141.0 L416.7 143.9 L416.5 146.3 L416.3 150.5 L416.3 151.9 L416.6 153.5 L417.9 156.2 L418.4 157.2 L418.3 158.1 L418.3 160.3 L418.4 160.8 L418.7 161.7 L418.4 163.4 L417.8 165.3 L413.3 169.6 L409.4 172.6 L403.8 176.2 L401.5 178.2 L399.2 181.3 L398.1 183.2 L396.1 190.2 L394.9 190.8 L392.0 190.3 L389.0 189.7 L388.2 189.6 L386.9 189.6 L379.6 189.5 L379.1 189.3 L378.3 188.4 L377.9 187.9 L375.2 185.3 L374.6 184.7 L373.6 183.8 L371.9 182.8 L370.9 182.5 L369.8 182.3 L369.4 182.3 L369.1 182.1 L368.9 181.8 L368.7 180.2 L368.6 179.2 L368.0 178.0 L366.7 176.9 L365.7 176.5 L364.1 176.2 L361.9 176.0 L359.9 175.5 L358.4 175.2 L358.2 174.7 L359.1 173.9 L359.3 172.6 L359.1 172.4 L360.0 174.0 L360.2 174.5 L361.5 175.8 L362.9 176.2 L365.3 176.4 L366.2 176.7 L367.6 177.6 L368.5 179.0 L368.7 179.8 L368.9 181.6 L368.8 182.0 L368.5 182.2 L368.5 182.5 L368.6 182.7 L368.9 182.8 L369.1 182.6 L369.4 182.5 L369.7 182.5 L370.9 182.8 L372.1 183.1 L373.4 183.9 L374.3 184.8 L375.8 186.2 L377.4 187.8 L377.5 188.1 L377.4 188.8 L377.2 189.0 L377.2 189.4 L377.4 189.9 L377.9 190.6 L379.0 191.9 L379.8 192.5 L380.4 193.1 L380.9 192.6 L382.0 192.6 L382.2 192.5 L382.2 191.7 L385.1 191.3 L387.7 190.1 L388.3 189.9 L395.4 191.2 L396.3 192.1 L397.6 196.9 L398.1 201.4 L398.3 203.8 L398.7 208.0 L398.9 210.7 L399.6 214.4 L401.0 218.6 L403.8 223.8 L405.6 227.7 L406.9 230.7 L407.3 231.4 L409.8 231.3 L414.2 231.4 L414.9 231.9 L416.8 235.4 L417.8 237.1 L419.1 239.3 L419.6 240.3 L420.3 241.6 L421.9 244.7 L423.4 247.6 L425.4 251.3 L426.3 253.1 L427.9 256.2 L429.8 260.1 L430.1 260.7 L431.7 263.1 L431.9 263.5 L432.3 264.2 L433.4 265.9 L433.8 266.5 L434.5 267.7 L435.2 267.7 L436.1 267.3 L438.5 265.9 L441.4 264.2 L442.1 264.0 L442.4 264.1 L442.7 264.3 L443.3 265.3 L443.7 266.4 L444.0 268.4 L444.3 271.8 L444.5 273.0 L449.7 272.8 L450.6 272.7 L451.8 272.5 L455.0 272.1 L457.8 271.9 L459.6 271.7 L460.5 271.6 L463.3 271.3 L464.1 271.1 L465.4 270.9 L466.3 270.9" fill="none" stroke="#fff" stroke-width="17" stroke-linejoin="round" stroke-linecap="round"/><path d="M466.3 270.9 L468.2 271.1 L468.6 274.2 L469.2 274.5 L471.2 274.5 L473.0 274.4 L475.2 274.4 L476.1 274.2 L477.3 273.8 L478.4 273.3 L479.4 272.5" fill="none" stroke="#1a9e61" stroke-width="10" stroke-linejoin="round" stroke-linecap="round"/><path d="M479.4 272.5 L480.3 271.9 L480.8 270.8 L484.7 270.5 L486.4 270.4 L486.5 269.0 L486.5 268.5 L486.6 268.0 L486.8 265.0 L487.1 260.9 L487.4 257.5 L487.6 255.3 L487.7 254.9 L488.0 254.4 L488.1 253.8 L488.2 252.9 L488.4 252.4 L489.9 249.8 L491.0 247.9 L491.5 247.0 L492.2 245.2 L492.5 243.6 L492.6 242.7 L492.6 242.4 L493.0 236.7 L493.1 235.3 L493.2 234.0" fill="none" stroke="#9cc63b" stroke-width="10" stroke-linejoin="round" stroke-linecap="round"/><path d="M493.2 234.0 L493.3 232.4 L493.5 229.6 L494.0 223.7 L494.4 218.7 L494.5 217.6 L494.7 214.8 L495.2 208.1 L496.0 197.2" fill="none" stroke="#1a9e61" stroke-width="10" stroke-linejoin="round" stroke-linecap="round"/><path d="M496.0 197.2 L496.1 195.6 L496.5 194.2 L497.2 193.5 L497.2 192.9 L497.0 192.5 L496.6 192.0 L496.7 188.9 L497.1 185.7 L497.3 183.5 L497.7 182.7 L498.2 182.2 L499.1 181.8 L501.3 181.3 L502.7 180.5 L503.5 179.5 L503.7 178.8 L504.3 175.5 L504.6 174.3 L504.9 173.6 L505.2 173.4 L505.2 173.1 L505.1 172.7 L504.9 171.9" fill="none" stroke="#e9c53a" stroke-width="10" stroke-linejoin="round" stroke-linecap="round"/><path d="M504.9 171.9 L504.9 171.4 L505.2 170.0 L505.6 168.1 L505.7 166.9 L505.7 166.2 L505.2 163.8 L505.4 163.3 L505.3 162.9 L505.1 162.7 L504.7 162.0 L504.5 161.2 L504.2 159.9 L504.1 159.6 L503.4 156.1 L503.3 155.5 L502.5 151.7 L502.4 151.1" fill="none" stroke="#1a9e61" stroke-width="10" stroke-linejoin="round" stroke-linecap="round"/><path d="M502.4 151.1 L501.8 148.5 L502.1 147.4 L504.7 143.8 L505.1 143.4 L505.6 143.2 L506.1 143.3 L506.6 143.8 L507.0 144.5 L507.2 144.7 L506.9 142.8 L506.7 141.6 L506.7 140.0 L506.5 138.2 L506.2 137.4 L504.9 137.0 L504.5 136.6 L504.4 136.2 L504.8 135.1 L505.3 135.5" fill="none" stroke="#9cc63b" stroke-width="10" stroke-linejoin="round" stroke-linecap="round"/><path d="M505.3 135.5 L507.0 135.5 L507.7 135.5 L509.5 134.9 L510.5 134.7 L511.1 134.8 L512.6 135.5 L514.2 136.9 L514.2 137.6" fill="none" stroke="#1a9e61" stroke-width="10" stroke-linejoin="round" stroke-linecap="round"/><path d="M514.2 137.6 L513.9 138.2 L513.3 138.4 L512.7 138.1 L512.4 137.5 L512.5 136.1 L513.6 133.8 L514.5 132.7 L516.3 130.8 L521.4 125.2 L524.5 121.5 L526.1 119.6 L527.6 118.2 L529.5 117.3 L530.7 117.1 L532.4 117.0 L533.3 116.9 L533.9 116.4 L534.1 115.8 L534.1 115.2" fill="none" stroke="#9cc63b" stroke-width="10" stroke-linejoin="round" stroke-linecap="round"/><path d="M534.1 115.2 L533.7 114.4 L531.2 111.1 L530.3 110.0 L529.9 109.3 L529.1 107.8 L527.0 104.0 L525.4 102.1 L524.7 101.2 L522.9 99.5 L521.7 98.7 L520.2 97.9 L518.7 97.3 L515.2 95.7 L513.5 94.8 L511.5 93.2 L506.1 87.8 L504.2 86.6 L501.7 85.6 L490.8 82.6 L487.8 81.7 L482.2 79.6 L475.8 77.2 L473.8 76.7 L462.8 75.1 L458.8 74.8 L457.3 73.9 L456.7 72.2 L457.0 68.0 L456.8 63.1 L453.4 54.5 L452.4 51.1 L452.3 46.5 L452.6 44.4 L452.6 42.6 L453.1 41.9 L453.8 42.4" fill="none" stroke="#1a9e61" stroke-width="10" stroke-linejoin="round" stroke-linecap="round"/><path d="M453.8 42.4 L454.1 42.9 L453.9 43.9 L453.9 44.2 L454.2 44.3 L454.5 44.2 L454.7 43.7 L455.0 43.3" fill="none" stroke="#9cc63b" stroke-width="10" stroke-linejoin="round" stroke-linecap="round"/><path d="M455.0 43.3 L455.0 42.7 L454.8 41.9 L455.2 41.2 L455.4 41.3 L455.6 41.2 L455.9 40.9 L456.5 40.5 L457.6 39.9 L459.4 40.5 L460.2 41.3 L459.7 40.9 L458.8 39.6 L457.7 39.6 L456.5 40.5 L455.9 40.9 L455.4 40.8 L455.2 41.0 L455.2 41.2 L454.9 41.5 L454.9 42.5 L455.0 43.1 L454.8 43.5 L454.3 43.7 L454.2 43.4" fill="none" stroke="#e9c53a" stroke-width="10" stroke-linejoin="round" stroke-linecap="round"/><path d="M454.2 43.4 L453.9 42.5 L453.5 42.1 L453.3 41.4 L453.1 41.0 L452.6 41.0 L452.1 41.0 L451.5 40.7 L451.0 40.1 L450.8 39.2 L450.7 37.7 L450.7 36.3 L450.5 35.5 L450.1 34.9" fill="none" stroke="#1a9e61" stroke-width="10" stroke-linejoin="round" stroke-linecap="round"/><path d="M450.1 34.9 L450.1 34.3 L449.7 34.0 L449.1 34.1 L448.8 34.6 L448.6 35.4 L447.4 36.7 L446.0 37.8 L445.2 37.9 L444.7 38.2 L444.6 38.7 L445.0 39.1 L445.4 39.2 L446.1 39.4 L447.0 40.3 L447.6 41.2 L448.5 43.1 L449.0 45.9 L449.0 49.5 L448.1 51.4 L447.9 52.7 L448.0 55.3 L446.9 59.3 L441.0 73.1 L439.0 80.1 L435.9 88.1 L430.6 94.4" fill="none" stroke="#e9c53a" stroke-width="10" stroke-linejoin="round" stroke-linecap="round"/><path d="M430.6 94.4 L424.2 98.6 L418.7 100.5 L414.2 102.6 L411.6 104.2 L409.6 105.8 L408.3 107.0 L407.1 108.2 L406.2 109.3 L405.2 110.8 L404.6 111.9 L404.2 113.0 L403.9 114.1 L403.7 115.2 L403.7 116.3 L403.8 117.6 L404.0 118.7 L404.2 119.6 L404.7 121.2 L405.4 123.4 L406.2 125.5 L406.7 126.7 L407.2 127.8 L407.7 128.8 L408.5 130.0 L409.3 131.0 L410.0 132.1 L410.7 132.8 L412.9 134.8 L414.2 136.0 L415.6 137.6 L416.1 138.5 L416.8 141.0 L416.7 143.9 L416.5 146.3 L416.3 150.5 L416.3 151.9 L416.6 153.5 L417.9 156.2" fill="none" stroke="#9cc63b" stroke-width="10" stroke-linejoin="round" stroke-linecap="round"/><path d="M417.9 156.2 L418.4 157.2 L418.3 158.1 L418.3 160.3 L418.4 160.8 L418.7 161.7 L418.4 163.4 L417.8 165.3" fill="none" stroke="#1a9e61" stroke-width="10" stroke-linejoin="round" stroke-linecap="round"/><path d="M417.8 165.3 L413.3 169.6 L409.4 172.6 L403.8 176.2 L401.5 178.2 L399.2 181.3 L398.1 183.2 L396.1 190.2 L394.9 190.8 L392.0 190.3 L389.0 189.7" fill="none" stroke="#9cc63b" stroke-width="10" stroke-linejoin="round" stroke-linecap="round"/><path d="M389.0 189.7 L388.2 189.6 L386.9 189.6 L379.6 189.5 L379.1 189.3 L378.3 188.4 L377.9 187.9 L375.2 185.3 L374.6 184.7 L373.6 183.8 L371.9 182.8 L370.9 182.5 L369.8 182.3 L369.4 182.3 L369.1 182.1 L368.9 181.8 L368.7 180.2 L368.6 179.2 L368.0 178.0 L366.7 176.9 L365.7 176.5 L364.1 176.2 L361.9 176.0 L359.9 175.5 L358.4 175.2 L358.2 174.7 L359.1 173.9 L359.3 172.6 L359.1 172.4 L360.0 174.0 L360.2 174.5 L361.5 175.8 L362.9 176.2 L365.3 176.4 L366.2 176.7 L367.6 177.6 L368.5 179.0 L368.7 179.8 L368.9 181.6 L368.8 182.0 L368.5 182.2 L368.5 182.5 L368.6 182.7 L368.9 182.8 L369.1 182.6 L369.4 182.5 L369.7 182.5 L370.9 182.8 L372.1 183.1 L373.4 183.9 L374.3 184.8 L375.8 186.2 L377.4 187.8 L377.5 188.1 L377.4 188.8 L377.2 189.0 L377.2 189.4 L377.4 189.9 L377.9 190.6 L379.0 191.9 L379.8 192.5 L380.4 193.1 L380.9 192.6 L382.0 192.6 L382.2 192.5 L382.2 191.7 L385.1 191.3 L387.7 190.1 L388.3 189.9 L395.4 191.2 L396.3 192.1 L397.6 196.9 L398.1 201.4 L398.3 203.8 L398.7 208.0 L398.9 210.7 L399.6 214.4 L401.0 218.6 L403.8 223.8 L405.6 227.7 L406.9 230.7 L407.3 231.4 L409.8 231.3 L414.2 231.4 L414.9 231.9 L416.8 235.4 L417.8 237.1 L419.1 239.3 L419.6 240.3 L420.3 241.6" fill="none" stroke="#1a9e61" stroke-width="10" stroke-linejoin="round" stroke-linecap="round"/><path d="M420.3 241.6 L421.9 244.7 L423.4 247.6 L425.4 251.3 L426.3 253.1 L427.9 256.2 L429.8 260.1 L430.1 260.7 L431.7 263.1 L431.9 263.5 L432.3 264.2 L433.4 265.9 L433.8 266.5 L434.5 267.7 L435.2 267.7 L436.1 267.3 L438.5 265.9 L441.4 264.2 L442.1 264.0 L442.4 264.1 L442.7 264.3 L443.3 265.3 L443.7 266.4 L444.0 268.4 L444.3 271.8 L444.5 273.0 L449.7 272.8 L450.6 272.7" fill="none" stroke="#e9c53a" stroke-width="10" stroke-linejoin="round" stroke-linecap="round"/><path d="M450.6 272.7 L451.8 272.5 L455.0 272.1 L457.8 271.9 L459.6 271.7 L460.5 271.6 L463.3 271.3 L464.1 271.1 L465.4 270.9 L466.3 270.9" fill="none" stroke="#1a9e61" stroke-width="10" stroke-linejoin="round" stroke-linecap="round"/><path d="M466.3 270.9" fill="none" stroke="#9cc63b" stroke-width="10" stroke-linejoin="round" stroke-linecap="round"/><path d="M-7 -6 L7 0 L-7 6 Z" fill="#0c4a6e" stroke="#fff" stroke-width="1.5" transform="translate(502.5 151.7) rotate(-102)"/><path d="M-7 -6 L7 0 L-7 6 Z" fill="#0c4a6e" stroke="#fff" stroke-width="1.5" transform="translate(456.5 40.5) rotate(163)"/><path d="M-7 -6 L7 0 L-7 6 Z" fill="#0c4a6e" stroke="#fff" stroke-width="1.5" transform="translate(389.0 189.7) rotate(-176)"/><path d="M-7 -6 L7 0 L-7 6 Z" fill="#0c4a6e" stroke="#fff" stroke-width="1.5" transform="translate(414.9 231.9) rotate(61)"/><circle cx="419.9" cy="366.6" r="9" fill="#ef8b2c" stroke="#fff" stroke-width="2.5"/><path d="M419.9 366.6 l6 6 m0 -6 l-6 6" stroke="#fff" stroke-width="2" transform="translate(-3 -3)"/><rect x="387.0" y="325.6" width="65.8" height="22" rx="11" fill="#10302c"/><text x="419.9" y="340.6" font-size="13" font-weight="700" fill="#fff" text-anchor="middle">pothole</text><circle cx="317.0" cy="305.5" r="9" fill="#475569" stroke="#fff" stroke-width="2.5"/><path d="M317.0 305.5 l6 6 m0 -6 l-6 6" stroke="#fff" stroke-width="2" transform="translate(-3 -3)"/><rect x="273.0" y="320.5" width="88.0" height="22" rx="11" fill="#10302c"/><text x="317.0" y="335.5" font-size="13" font-weight="700" fill="#fff" text-anchor="middle">speed bump</text><circle cx="127.3" cy="210.6" r="9" fill="#d63a2f" stroke="#fff" stroke-width="2.5"/><path d="M127.3 210.6 l6 6 m0 -6 l-6 6" stroke="#fff" stroke-width="2" transform="translate(-3 -3)"/><rect x="79.6" y="169.6" width="95.4" height="22" rx="11" fill="#10302c"/><text x="127.3" y="184.6" font-size="13" font-weight="700" fill="#fff" text-anchor="middle">bad cobbles</text><circle cx="187.5" cy="336.4" r="9" fill="#1f2937" stroke="#fff" stroke-width="2.5"/><path d="M187.5 336.4 l6 6 m0 -6 l-6 6" stroke="#fff" stroke-width="2" transform="translate(-3 -3)"/><rect x="128.7" y="351.4" width="117.6" height="22" rx="11" fill="#10302c"/><text x="187.5" y="366.4" font-size="13" font-weight="700" fill="#fff" text-anchor="middle">traffic lights</text><g transform="translate(466.3 270.9)"><path d="M0 0 V-34" stroke="#10302c" stroke-width="4"/><path d="M0 -34 h30 l-8 11 8 11 h-30z" fill="#0c4a6e"/><circle r="8" fill="#2db892" stroke="#fff" stroke-width="3"/></g><rect x="490.3" y="281.9" width="117.6" height="22" rx="11" fill="#10302c"/><text x="549.1" y="296.9" font-size="13" font-weight="700" fill="#fff" text-anchor="middle">START = FINISH</text><g transform="translate(24 416)" font-size="13" font-weight="700" fill="#10302c"><rect width="12" height="12" rx="3" y="-11" fill="#1a9e61"/><text x="18">smooth</text><rect x="82" width="12" height="12" rx="3" y="-11" fill="#9cc63b"/><text x="100">good</text><rect x="148" width="12" height="12" rx="3" y="-11" fill="#e9c53a"/><text x="166">fair</text><rect x="204" width="12" height="12" rx="3" y="-11" fill="#b8cfc9"/><text x="222">not taken</text></g></svg>
-    </div>
+<main>
+  <section class="hero">
     <div>
-      <h3>The problem it solves</h3>
-      <p>A drive is made or ruined by what the road is like. Maps tell you where roads go. They don’t tell you which one is smooth, which one has a pothole in the best corner, or how many lights you’ll sit at. And driving the same three roads because you know them is no answer either.</p>
-      <p><b>The Loop is the answer.</b> It uses what you and other drivers recorded, picks roads that are known and smooth, keeps the time or distance you asked for, and steers round the things that spoil a drive. Then it hands the route to your navigator and you go.</p>
+      <div class="eyebrow"><i></i>Coming soon</div>
+      <h1>Find the <em>sweetest</em> roads.<br>Enjoy every bend.</h1>
+      <p class="lead">SweetTarmac uses your phone’s sensors to feel how smooth the road really is, maps it as you drive, and routes your next trip along the silkiest tarmac — tuned to your car’s suspension.</p>
+      <ul class="chips">
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="#2BC88A" stroke-width="2.4" stroke-linecap="round"><path d="M3 15c3-6 5-6 8 0s5 6 10 0"/></svg>Live smoothness</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="#F2C14E" stroke-width="2.4" stroke-linecap="round"><path d="M4 20c4-2 4-14 16-16"/></svg>Smoothest-route picker</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="#A8D046" stroke-width="2.4" stroke-linecap="round"><path d="M4 12h16M7 8v8M17 8v8"/></svg>Tuned to your car</li>
+      </ul>
     </div>
-  </div>
 
-  <div class="problem">
-    <div class="card"><div class="ic">🛣️</div><h3>Known, smooth roads first</h3><p style="margin:0;color:var(--muted)">At least 95% of a loop is on roads that have been driven and measured, the more the better. No surprises.</p></div>
-    <div class="card"><div class="ic">📍</div><h3>Back to the same spot</h3><p style="margin:0;color:var(--muted)">It always starts where you are and ends exactly there, even if the best answer is to drive a good road out and back.</p></div>
-    <div class="card"><div class="ic">🚦</div><h3>Fewer lights, no bumps</h3><p style="margin:0;color:var(--muted)">Tell it what to avoid: traffic lights, zebra crossings, tolls, speed bumps, holes and manhole covers. It routes round them when it can.</p></div>
-  </div>
-
-  <div class="two">
-    <div>
-      <h3>How a loop is chosen, in this order</h3>
-      <ol class="rules">
-        <li><span><b>95 to 100% known road</b>The more, the better. Roads you have driven and measured, in either direction.</span></li>
-        <li><span><b>The smoothness you asked for</b>A slider decides how much the feel of the road matters.</span></li>
-        <li><span><b>The time or distance you chose</b>From 10 minutes to 2 hours, or up to 200 km (125 miles), within a tolerance you set.</span></li>
-        <li><span><b>As few of the things you avoid as possible</b>Lights, zebra crossings, tolls, bumps, holes and manholes.</span></li>
-      </ol>
+    <div class="art" aria-hidden="true">
+      <svg class="road" viewBox="0 0 660 560">
+        <defs>
+          <linearGradient id="edge" x1="0" y1="1" x2="1" y2="0">
+            <stop offset="0" stop-color="#2BC88A"/>
+            <stop offset=".55" stop-color="#A8D046"/>
+            <stop offset="1" stop-color="#2BC88A"/>
+          </linearGradient>
+          <linearGradient id="tar" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#2A322E"/>
+            <stop offset="1" stop-color="#1E2522"/>
+          </linearGradient>
+        </defs>
+        <!-- smoothness glow under the road -->
+        <path d="M60 520 C 160 470, 170 360, 260 320 S 430 300, 470 210 S 520 70, 600 40"
+              fill="none" stroke="url(#edge)" stroke-width="96" stroke-linecap="round" opacity=".18"/>
+        <!-- tarmac -->
+        <path d="M60 520 C 160 470, 170 360, 260 320 S 430 300, 470 210 S 520 70, 600 40"
+              fill="none" stroke="url(#tar)" stroke-width="78" stroke-linecap="round"/>
+        <!-- smooth-road edge lines -->
+        <path d="M60 520 C 160 470, 170 360, 260 320 S 430 300, 470 210 S 520 70, 600 40"
+              fill="none" stroke="url(#edge)" stroke-width="82" stroke-linecap="round" opacity=".9"
+              stroke-dasharray="0" style="mix-blend-mode:normal" mask="url(#m)"/>
+        <mask id="m"><rect width="660" height="560" fill="white"/>
+          <path d="M60 520 C 160 470, 170 360, 260 320 S 430 300, 470 210 S 520 70, 600 40"
+                fill="none" stroke="black" stroke-width="74" stroke-linecap="round"/></mask>
+        <!-- centre line -->
+        <path class="paint" d="M60 520 C 160 470, 170 360, 260 320 S 430 300, 470 210 S 520 70, 600 40"
+              fill="none" stroke="#F2C14E" stroke-width="5" stroke-linecap="round"/>
+        <!-- little car -->
+        <g class="car">
+          <rect x="-15" y="-9" width="30" height="18" rx="6" fill="#F3F1EA"/>
+          <rect x="2" y="-7" width="8" height="14" rx="2.5" fill="#121614" opacity=".8"/>
+          <circle cx="13" cy="-5" r="1.8" fill="#F2C14E"/><circle cx="13" cy="5" r="1.8" fill="#F2C14E"/>
+        </g>
+      </svg>
     </div>
-    <div class="phones">
-      <div class="phone tilt1"><img src="img/loop-form.jpg" alt="The Loop form: ride for 45 minutes, what to avoid, the Explorer switch and the Find a smooth loop button" loading="lazy"></div>
-      <div class="phone tilt2"><img src="img/loop-avoid.jpg" alt="The Avoid menu: traffic lights, speed bumps, big holes and manhole covers, zebra crossings and tolls" loading="lazy"></div>
-    </div>
-  </div>
-
-  <div class="two" style="margin-top:56px">
-    <div class="phones"><div class="phone"><img src="img/loop-explorer-results.jpg" alt="Explorer mode: loops over roads you have not recorded yet, shown in green" loading="lazy"></div></div>
-    <div>
-      <span class="badge" style="background:var(--explore)">Explorer</span>
-      <h3>Want something new? Switch on Explorer.</h3>
-      <p>The normal Loop sticks to roads that are known and smooth. Explorer does the opposite: it draws a loop over roads <b>you have not recorded yet</b>, for the time or distance you chose, so you can discover new ones and fill the map. Everything turns green so you always know which mode you are in.</p>
-      <p>Then drive it with recording on, and the next loop gets better for everyone.</p>
-    </div>
-  </div>
-</div></section>
-
-<!-- ============================ HOW IT WORKS ============================ -->
-<section id="how"><div class="wrap">
-  <h2>How it works</h2>
-  <p class="lead">Your phone is the instrument. Mount it firmly, press record and drive the way you always do.</p>
-  <div class="steps">
-    <div class="step"><svg viewBox="0 0 200 96" role="img" aria-label="A phone on a dashboard mount"><rect x="0" y="62" width="200" height="34" rx="8" fill="#c5dcd6"/><rect x="78" y="14" width="44" height="76" rx="9" fill="#0e1a18"/><rect x="83" y="22" width="34" height="58" rx="4" fill="#2db892"/><path d="M92 50 h16" stroke="#0f3d3a" stroke-width="4" stroke-linecap="round"/><path d="M122 40 q14 -8 24 0 M122 52 q18 -10 34 0" stroke="#2db892" stroke-width="3" fill="none" stroke-linecap="round"/></svg><h3>1. Mount and record</h3><p>Any firm mount, any orientation. It works out “up” by itself and records from 5 km/h.</p></div>
-    <div class="step"><svg viewBox="0 0 200 96" role="img" aria-label="A road surface with a wavy line above it"><path d="M0 70 q20 -12 40 0 t40 0 t40 0 t40 0 t40 0" stroke="#1a9e61" stroke-width="7" fill="none"/><path d="M0 40 q10 -16 20 0 t20 0 t20 0 t20 0 t20 0 t20 0 t20 0 t20 0 t20 0 t20 0" stroke="#ef8b2c" stroke-width="4" fill="none" opacity=".85"/><text x="6" y="92" font-size="12" font-weight="700" fill="#4c6a65">smooth ………… rough</text></svg><h3>2. It feels the road</h3><p>Every second of road becomes a smoothness score, tuned to your car’s suspension.</p></div>
-    <div class="step"><svg viewBox="0 0 200 96" role="img" aria-label="A map with a coloured road"><rect width="200" height="96" rx="10" fill="#e4f3ef"/><path d="M10 80 C40 20 80 90 110 40 S170 20 192 14" stroke="#fff" stroke-width="14" fill="none" stroke-linecap="round"/><path d="M10 80 C40 20 55 60 70 56" stroke="#1a9e61" stroke-width="7" fill="none" stroke-linecap="round"/><path d="M70 56 C85 50 90 72 110 40" stroke="#e9c53a" stroke-width="7" fill="none" stroke-linecap="round"/><path d="M110 40 S150 28 192 14" stroke="#9cc63b" stroke-width="7" fill="none" stroke-linecap="round"/><circle cx="96" cy="58" r="7" fill="#ef8b2c"/></svg><h3>3. Your roads in colour</h3><p>The map shows what you have driven, by direction, and the bumps and holes in it.</p></div>
-    <div class="step"><svg viewBox="0 0 200 96" role="img" aria-label="A loop arrow returning to a flag"><rect width="200" height="96" rx="10" fill="#e4f3ef"/><path d="M40 78 L44 58 L30 46 L52 30 L84 36 L96 16 L128 22 L150 40 L172 34 L166 58 L140 62 L128 82 L100 74 L78 84 L58 80 L40 78" fill="none" stroke="#fff" stroke-width="11" stroke-linejoin="round" stroke-linecap="round"/><path d="M40 78 L44 58 L30 46 L52 30 L84 36 L96 16 L128 22 L150 40 L172 34 L166 58 L140 62 L128 82 L100 74 L78 84 L58 80 L40 78" fill="none" stroke="#38bdf8" stroke-width="6" stroke-linejoin="round" stroke-linecap="round"/><path d="M40 78 V44" stroke="#10302c" stroke-width="3"/><path d="M40 44 h22 l-6 8 6 8 h-22z" fill="#0c4a6e"/></svg><h3>4. Plan, drive, enjoy</h3><p>Pick a Loop or a route, send it to your navigator, and the app can record that drive too.</p></div>
-  </div>
-  <h3 style="margin-top:50px">The smoothness scale</h3>
-  <p style="color:var(--muted);margin-top:0">Five levels on a scale from 0 to 5, the same on the map, the live panel and the route cards. The scale adapts to your car: a stiff classic and a soft saloon both call the same road smooth.</p>
-  <div class="scale">
-    <div style="background:var(--c1)">Smooth<small>4.0 – 5.0</small></div><div style="background:var(--c2);color:#10230a">Good<small>3.0 – 4.0</small></div><div style="background:var(--c3);color:#352a00">Fair<small>2.0 – 3.0</small></div><div style="background:var(--c4);color:#3a1a00">Rough<small>1.0 – 2.0</small></div><div style="background:var(--c5)">Very rough<small>0.0 – 1.0</small></div>
-  </div>
-</div></section>
-
-<!-- ============================ FEATURES ============================ -->
-<section id="features" style="background:color-mix(in srgb,var(--teal) 7%,var(--bg))"><div class="wrap">
-  <h2>Everything a driver wants to know about the road</h2>
-  <p class="lead">A quick tour.</p>
-  <div class="feats">
-    <div class="feat"><h3><i>📈</i>Live smoothness</h3><p>While you drive, a panel shows the level of the road right now, your speed and a 60-second chart, in colour you can read at a glance.</p></div>
-    <div class="feat gold"><h3><i>🕳️</i>Bumps, holes and manholes</h3><p>Mark a speed bump or a hole with two gold buttons: it shows in gold on your map and in the colour key, goes to the server with your drive, and warns the next driver. Nothing is marked behind your back.</p></div>
-    <div class="feat"><h3><i>🚗</i>Tuned to your car</h3><p>Up to twelve cars, each with its own suspension setting from Very soft to Rock hard, calibrated with a guided set-up and re-colouring all your old drives instantly.</p></div>
-    <div class="feat"><h3><i>🧭</i>Smooth routes, A to B</h3><p>Several alternatives are compared against everything recorded, with time, distance, smooth share, bumps and holes on each card.</p></div>
-    <div class="feat"><h3><i>🛟</i>Careful by design</h3><p>Recording pauses if the phone is knocked out of its mount, ignores the phone’s own buzzing, skips low speeds and ends a forgotten trip by itself.</p></div>
-    <div class="feat"><h3><i>🔒</i>Yours first</h3><p>Everything is stored on your phone. Online mode is optional, anonymous, trimmed at both ends of every trip, and deletable at any time.</p></div>
-  </div>
-  <div class="strip" aria-label="Screenshots">
-    <div><div class="phone"><img src="img/rec-live.jpg" alt="Recording: live smoothness panel and the gold bump and hole buttons" loading="lazy"></div><div class="cap">Live while you drive</div></div>
-    <div><div class="phone"><img src="img/obstacles.jpg" alt="The map with speed bumps and holes, yours in gold" loading="lazy"></div><div class="cap">Bumps &amp; holes on the map</div></div>
-    <div><div class="phone"><img src="img/mark-buttons.jpg" alt="The two round gold buttons that mark a speed bump or a hole" loading="lazy"></div><div class="cap">Mark what you find</div></div>
-    <div><div class="phone"><img src="img/suspension.jpg" alt="The suspension scale from Very soft to Rock hard" loading="lazy"></div><div class="cap">Your suspension</div></div>
-    <div><div class="phone"><img src="img/route-results.jpg" alt="Route results compared by time, distance and smoothness" loading="lazy"></div><div class="cap">Smooth routes</div></div>
-    <div><div class="phone"><img src="img/trip-summary.jpg" alt="Trip summary with the share of each smoothness level" loading="lazy"></div><div class="cap">After every drive</div></div>
-    <div><div class="phone"><img src="img/loop-results-light.jpg" alt="The Loop in the light theme" loading="lazy"></div><div class="cap">Light or dark</div></div>
-  </div>
-</div></section>
-
-<!-- ============================ WHAT'S NEW ============================ -->
-<section id="new"><div class="wrap">
-  <h2>New: be the explorer of real roads</h2>
-  <p class="lead">Sweet Tarmac is about streets and roads, not motorways. So the new ranking rewards the ones who record the roads nobody has recorded yet.</p>
-  <div class="two">
-    <div class="card gold"><h3>🏆 Explorers ranking</h3><p style="margin:0 0 10px">Choose a nickname and see the biggest explorers: the length of road each driver was the <b>first to record</b>, with medals for the top three.</p>
-      <p style="margin:0 0 10px"><b>The golden steering wheel</b> (animated and sparkly) goes to whoever found the most new <b>smooth and good</b> road in the last 30 days, as long as their car is properly calibrated.</p>
-      <p style="margin:0;color:var(--muted)"><b>Highways and freeways do not count</b>: they are almost all smooth, and we do not want to promote them. You can still record them.</p></div>
-    <div class="phones"><div class="phone"><img src="img/ranking.jpg" alt="The explorers ranking with the golden steering wheel banner, medals for the first three places and the note that highways do not count" loading="lazy"></div></div>
-  </div>
-  <div class="feats" style="margin-top:36px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))">
-    <div class="feat"><h3><i>💾</i>One backup of everything</h3><p>Recordings, trips, your gold marks, cars and their calibration, every setting, your nickname and your place in the ranking: one file. Restore it on a new phone or after a reinstall and all is back as it was.</p></div>
-    <div class="feat"><h3><i>🙂</i>No account, just a nickname</h3><p>No e-mail, no Google sign-in. The app makes its own id and asks for a nickname. During the closed test, an access password from the owner lets you in.</p></div>
-    <div class="feat"><h3><i>🧭</i>Exact route in your navigator</h3><p>Open the route you chose as a track in OsmAnd or Organic Maps, so they follow it turn by turn, or hand Google Maps up to nine stops that keep it on your roads.</p></div>
-    <div class="feat"><h3><i>🗂️</i>Options in the order you think</h3><p>My cars, While driving, Map &amp; roads, Routes, Community, App &amp; language, My data: with a search box and a one-line status on the sections that need it.</p></div>
-  </div>
-  <div class="strip" aria-label="Screenshots" style="margin-top:30px">
-    <div><div class="phone"><img src="img/options.jpg" alt="Options in the new order: My cars, While driving, Map and roads, Routes, Community, App and language, My data, Advanced, About, with a search box" loading="lazy"></div><div class="cap">Options, tidied</div></div>
-    <div><div class="phone"><img src="img/obstacles.jpg" alt="The map with your gold speed bumps and holes" loading="lazy"></div><div class="cap">Your gold marks</div></div>
-  </div>
-</div></section>
-
-<!-- ============================ COMMUNITY ============================ -->
-<section class="community" id="community"><div class="wrap">
-  <h2>Drivers helping drivers</h2>
-  <p class="lead">You drive for yourself. If you want, what you record also helps others find the roads worth driving, and theirs help you.</p>
-  <div class="flow">
-    <div class="node"><b>📱 Your phone</b>Records, scores and keeps everything locally. This is all you need to use the app.</div>
-    <div class="arr">→</div>
-    <div class="node"><b>🌍 Optional: Online mode</b>Anonymous trimmed readings (never your first and last 300 m), a random id, no e-mail, no names.</div>
-    <div class="arr">→</div>
-    <div class="node"><b>🗄️ The server</b>Combines everyone’s drives into one smoothness map, sets aside readings that disagree with the rest, and plans routes and loops on all of it.</div>
-  </div>
-  <div class="two" style="margin-top:44px">
-    <div class="card"><h3>Good data in, good roads out</h3><p style="margin:0">Readings that are far from what other drivers recorded on the same road are put in quarantine and kept out of the averages, so one badly calibrated phone cannot spoil the map. If you drive several cars, the app even warns you when one of them reads differently from the others.</p></div>
-    <div class="card gold"><h3>Your marks are the only ones</h3><p style="margin:0">Only the speed bumps and holes that drivers mark themselves, in gold, are shared: nothing is detected and sent behind anyone’s back. You can switch other sources off and use only yours.</p></div>
-  </div>
-</div></section>
-
-<!-- ============================ CTA ============================ -->
-<section class="cta"><div class="wrap">
-  <h2>Sweet tarmac?</h2>
-  <p class="lead" style="margin:0 auto 24px;color:#cfe6e0">Six languages (English, Português, Español, Français, Deutsch, Italiano), km or miles, light and dark, colour-blind-friendly colours. In closed testing now, coming to Google Play.</p>
-  <p><a class="btn loop" href="#new">See what’s new</a></p>
-  <p style="margin-top:22px;color:#9fbdb6">Questions: <a href="mailto:support@sweettarmac.com">support@sweettarmac.com</a></p>
-</div></section>
-
+  </section>
 </main>
 
-<footer><div class="wrap">
-  <span>© 2026 FilipeB · Sweet Tarmac</span>
-  <span><a href="privacy.html">Privacy policy</a> · <a href="terms.html">Terms of use</a></span>
-  <span>Map data © OpenStreetMap contributors. Screenshots show sample data. Please drive safely and never handle your phone while driving.</span>
-</div></footer>
+<footer>
+  <span>© <span id="y">2026</span> SweetTarmac</span>
+  <span>Android app · in development</span>
+  <span><a href="mailto:support@sweettarmac.com">support@sweettarmac.com</a> · <a href="privacy.html">Privacy policy</a> · <a href="terms.html">Terms of use</a></span>
+</footer>
+<script>document.getElementById('y').textContent = new Date().getFullYear();</script>
 </body>
 </html>
